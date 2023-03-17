@@ -21,7 +21,7 @@ df = pd.read_excel(
 )
 
 codigo=st.multiselect(
-  "SELECIONE OS CODIGOS:",
+  "SELECIONE OU DIGITE OS CODIGOS:",
    options=df["CODIGOS"].unique(),
    #default=df["CODIGOS"].unique()  
   )
