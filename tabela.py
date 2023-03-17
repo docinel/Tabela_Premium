@@ -7,7 +7,7 @@ st.set_page_config(
 
 )
 
-st.title('TABELA DE PREÇOS PREMIUM COLCHOES \n:sunglasses: :moneybag:')
+st.title('TABELA DE PREÇOS PREMIUM COLCHOES :sunglasses: :moneybag:')
 
 
 def formatar(valor):
@@ -20,13 +20,13 @@ df = pd.read_excel(
     
 )
 
-codigo=st.sidebar.multiselect(
+codigo=st.multiselect(
   "SELECIONE OS CODIGOS:",
    options=df["CODIGOS"].unique(),
    #default=df["CODIGOS"].unique()  
   )
 
-# produto=st.sidebar.multiselect(
+# produto=st.multiselect(
 #   "SELECIONE OS PRODUTOS:",
 #    options=df["PRODUTOS"].unique(),
 #    #default=df["CODIGOS"].unique()  
@@ -35,7 +35,7 @@ codigo=st.sidebar.multiselect(
 df_select = df.query(
     "CODIGOS == @codigo",
 )
-
+st.markdown("---")
 total_produtos = df_select["VALORES"].sum()
 texto_soma_total_produtos = f"{total_produtos: _.2f}"
 texto_soma_total_produtos = texto_soma_total_produtos.replace('.', ',').replace('_', '.')
