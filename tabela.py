@@ -7,7 +7,8 @@ st.set_page_config(
 
 )
 
-st.title('TABELA DE PREÇOS PREMIUM COLCHOES :sunglasses: :moneybag:')
+st.title(':bed: TABELA DE PREÇOS PREMIUM COLCHOES :cloud:')
+st.title(':cloud:  :sunglasses: :moneybag:')
 
 
 def formatar(valor):
@@ -20,13 +21,13 @@ df = pd.read_excel(
     
 )
 
-codigo=st.multiselect(
+codigo=st.sidebar.multiselect(
   "SELECIONE OU DIGITE OS CODIGOS:",
    options=df["CODIGOS"].unique(),
    #default=df["CODIGOS"].unique()  
   )
 
-# produto=st.multiselect(
+# produto=st.sidebar.multiselect(
 #   "SELECIONE OS PRODUTOS:",
 #    options=df["PRODUTOS"].unique(),
 #    #default=df["CODIGOS"].unique()  
